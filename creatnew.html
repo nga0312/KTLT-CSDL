@@ -14,14 +14,13 @@
     />
 
     <link rel="stylesheet" href="creatnewStyle.css" />
+    <script src="app.js"></script>
   </head>
   <body>
     <button class="open-modal-btn">Add</button>
     <form
-      id="uploadbanner"
-      enctype="multipart/form-data"
+      action="/api/items"
       method="post"
-      action="/api/upload"
     >
     <div class="modal hide">
       <div class="modal__inner">
@@ -71,7 +70,7 @@
         </div>
       </div>
     </div>
-    <script src="app.js"></script>
+    <script src="app1.js"></script>
     </form>
   </body>
 </html>
