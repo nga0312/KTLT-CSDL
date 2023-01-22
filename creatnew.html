@@ -18,6 +18,7 @@
   <body>
     <button class="open-modal-btn">Add</button>
     <div class="modal hide">
+      <form action="/" method="post">
       <div class="modal__inner">
         <div class="modal__header">
           <p>Add new product</p>
@@ -33,7 +34,7 @@
             <i class="fas fa-cloud-upload-alt"></i>
             <!-- <span>image</span> -->
           </label>
-          <input type="file" hidden id="input-img" />
+          <input name="inputimg" type="file" hidden id="input-img" />
         </div>
         <div>
           <label for="intro"><b>Giới thiệu</b></label>
@@ -48,7 +49,7 @@
             <label for="country"><b>Loại sản phẩm</b></label>
           </div>
           <div class="custom-select">
-            <select id="country" name="country">
+            <select id="country" name="type">
               <option value="Femail">Nữ</option>
               <option value="Mail">Nam</option>
               <option value="Chirdren">Trẻ con</option>
@@ -64,7 +65,9 @@
           <button>Add</button>
         </div>
       </div>
+      </form>
     </div>
     <script src="app.js"></script>
+    <script src="app1.js"></script>
   </body>
 </html>
