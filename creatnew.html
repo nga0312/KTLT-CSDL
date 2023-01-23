@@ -17,6 +17,7 @@
   </head>
   <body>
     <button class="open-modal-btn">Add</button>
+    <form method="post" action="/api/items">
     <div class="modal hide">
       <div class="modal__inner">
         <div class="modal__header">
@@ -40,7 +41,7 @@
           <!-- <input type="text" placeholder="Giới thiệu sản phẩm" name="intro" required> -->
         </div>
         <div>
-          <textarea id="subject" name="intro" placeholder="Write something.." style="height:100px"></textarea>
+          <textarea id="subject" name="intro" placeholder="Write something.." style="height:100px; width:500px ;"></textarea>
         </div>
           
         <div class="row">
@@ -48,10 +49,10 @@
             <label for="country"><b>Loại sản phẩm</b></label>
           </div>
           <div class="custom-select">
-            <select id="country" name="country">
-              <option value="Femail">Nữ</option>
-              <option value="Mail">Nam</option>
-              <option value="Chirdren">Trẻ con</option>
+            <select id="country" name="type">
+              <option value="Skirt">Áo</option>
+              <option value="Pant">Quần</option>
+              <option value="Bag">Túi xách</option>
             </select>
           </div>
         </div>
@@ -65,6 +66,7 @@
         </div>
       </div>
     </div>
-    <script src="app.js"></script>
+    </form>
+    <script src="script.js"></script>
   </body>
 </html>

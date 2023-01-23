@@ -1,31 +1,24 @@
-const modal = document.querySelector(".modal");
-const openModalBtn = document.querySelector(".open-modal-btn");
-const iconCloseModal = document.querySelector(".modal__header i");
-const buttonCloseModal = document.querySelector(".modal__footer button");
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const port = process.env.PORT || 5500;
+const apiPath = '/api/';
 
-function toggleModal() {
-  modal.classList.toggle("hide");
-}
+app.use(express.json());
+app.use(express.urlencoded());
 
-openModalBtn.addEventListener("click", toggleModal);
-iconCloseModal.addEventListener("click", toggleModal);
-buttonCloseModal.addEventListener("click", toggleModal);
+// website
+app.use(express.static('client'));
 
-modal.addEventListener("click", (e) => {
-  if (e.target == e.currentTarget) toggleModal();
+app.get('/hi', (request, response) => {
+	response.send('response for GET request');
+  });
+// routers
+app.use(apiPath + 'items', require('./routes/items.route'));
+// app.use(apiPath + 'products', require('./routes/products.route'));
+// app.use(apiPath + 'upload', require('./routes/upload.route'));
+
+app.listen(port, function () {
+	const host = '127.0.0.1';
+	console.log('Example app listening at http://%s:%s', host, port);
 });
-
-//img
-const inputImg = document.querySelector('#input-img')
-
-inputImg.addEventListener('change', (e) => {
-    let file = e.target.files[0]
-
-    if (!file) return
-
-    let img = document.createElement('img')
-    img.src = URL.createObjectURL(file)
-
-    document.querySelector('.preview').appendChild(img)
-    console.log('img',img)
-})
