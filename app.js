@@ -1,7 +1,8 @@
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const port = process.env.PORT || 5500;
+const port =  5500;
 const apiPath = '/api/';
 
 app.use(express.json());
@@ -10,9 +11,10 @@ app.use(express.urlencoded());
 // website
 app.use(express.static('client'));
 
-app.get('/hi', (request, response) => {
-	response.send('response for GET request');
-  });
+app.get('/test', (req, res)=>{
+	res.send('1234567');
+})
+
 // routers
 app.use(apiPath + 'items', require('./routes/items.route'));
 // app.use(apiPath + 'products', require('./routes/products.route'));
