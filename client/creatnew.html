@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Modal</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="creatnewStyle.css" />
+  </head>
+  <body>
+      <form method="post" action='/api/items'>
+      <div class="modal__inner">
+        <div class="modal__header">
+          <p>Add new product</p>
+          <a href="/">
+          <i class="fas fa-times"></i>
+          </a>
+        </div>
+        <div class="modal__body">
+        <div>
+          <label for="name"><b>Tên của sản phẩm</b></label>
+          <input type="text" placeholder="Enter name of product" name="name" required>
+        </div>
+        <div class="container">
+          <label for="input-img" class="preview">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <!-- <span>image</span> -->
+          </label>
+          <input type="file" hidden id="input-img" />
+        </div>
+        <div>
+          <label for="intro"><b>Giới thiệu</b></label>
+          <!-- <input type="text" placeholder="Giới thiệu sản phẩm" name="intro" required> -->
+        </div>
+        <div>
+          <textarea id="subject" name="intro" placeholder="Write something.." style="height:100px; width:500px ;"></textarea>
+        </div>
+          
+        <div class="row">
+          <div class="col-25">
+            <label for="country"><b>Loại sản phẩm</b></label>
+          </div>
+          <div class="custom-select">
+            <select id="country" name="type">
+              <option value="Skirt">Áo</option>
+              <option value="Pant">Quần</option>
+              <option value="Bag">Túi xách</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="price"><b>Giá của sản phẩm</b></label>
+          <input type="number" placeholder="Enter price of product" name="price" required>
+        </div>
+        </div>
+        <div type="submit" class="modal__footer">
+          <button>Add</button>
+        </div>
+      </div>
+    </form>  
+    <script src="script.js"></script>
+  </body>
+</html>
