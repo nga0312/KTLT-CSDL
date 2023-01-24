@@ -1,0 +1,15 @@
+[{
+    "id": 1,
+    "name": "abc",
+    "img": "",
+    "price": 65,
+    "type": "Bag",
+    "intro": "hàng Việt Nam chất lượng cao"
+},{
+    "id": 2,
+    "name": "bcd",
+    "img": "",
+    "price": 80,
+    "type": "Skirt",
+    "intro": "hàng China chất lượng cao"
+}]
