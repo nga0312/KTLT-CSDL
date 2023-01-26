@@ -45,7 +45,7 @@ class itemController {
 				console.log('Db not connected successfully', error);
 				return res
 					.status(200)
-					.json({ result: `Không thể kết nối Database` });
+					.json({ result: `Không thể kết nối Database post ` });
 			});
 	}
 }
