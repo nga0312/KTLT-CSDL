@@ -61,7 +61,7 @@ body {
   overflow: hidden;
   animation: showModal linear 0.2s;
   position: relative;
-  margin: 150px 0px 50px 450px;
+  margin: 90px 0px 150px 450px;
 }
 
 @keyframes showModal {
