@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Modal</title>
+    <link rel="stylesheet" href="createnewStyle.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
@@ -12,8 +13,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <link rel="stylesheet" href="creatnewStyle.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body {font-family: "Raleway", sans-serif}
+    </style>
   </head>
   <body>
       <form method="post" action='/api/items'>
@@ -27,7 +31,7 @@
         <div class="modal__body">
         <div>
           <label for="name"><b>Tên của sản phẩm</b></label>
-          <input type="text" placeholder="Enter name of product" name="name" required>
+          <input type="text" placeholder="Enter name of product" name="name" required style ="width: 420px;">
         </div>
         <div class="container">
           <label for="input-img" class="preview">
@@ -41,37 +45,22 @@
           <!-- <input type="text" placeholder="Giới thiệu sản phẩm" name="intro" required> -->
         </div>
         <div>
-          <textarea id="subject" name="intro" placeholder="Write something.." style="height:100px; width:500px ;"></textarea>
+          <textarea id="subject" name="intro" placeholder="Write something.." style="height:100px; width:560px  ;"></textarea>
         </div> 
-        <div>
-          <div class="col-25">
+        <div class="col-25">
             <label for="type"><b>Loại sản phẩm</b></label>
-          </div>
-          <div class="custom-select">
             <select id="type" name="type">
               <option value="Skirt">Áo</option>
               <option value="Pant">Quần</option>
               <option value="Bag">Túi xách</option>
             </select>
-          </div>
-        </div>
-        <div>
-          <div class="col-25">
             <label for="size"><b>Kich thước</b></label>
-          </div>
-          <div class="custom-select">
             <select id="size" name="size">
               <option value="S">S</option>
               <option value="X">X</option>
               <option value="XXL">XXL</option>
             </select>
-          </div>
-        </div>
-        <div>
-          <div class="col-25">
             <label for="brand"><b>Brand</b></label>
-          </div>
-          <div class="custom-select">
             <select id="brand" name="brand">
               <option value="LouisVuitton">Louis Vuitton</option>
               <option value="Hermès">Hermès</option>
@@ -80,16 +69,12 @@
               <option value="Gucci">Gucci</option>
               <option value="ChristianDior">Christian Dior</option>
             </select>
-          </div>
         </div>
-        <div>
-          <label for="material"><b>Chất liệu của sản phẩm</b></label>
+        <div class="col-26">
+         <label for="material"><b>Chất liệu của sản phẩm</b></label>
           <input type="text" placeholder="Enter material of product" name="material">
-        </div>
-        <div>
           <label for="price"><b>Giá của sản phẩm</b></label>
           <input type="number" placeholder="Enter price of product" name="price" required>
-        </div>
         </div>
         <div type="submit" class="modal__footer">
           <button>Add</button>
