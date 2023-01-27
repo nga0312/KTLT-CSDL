@@ -10,6 +10,7 @@
     <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </style>
+
   </head>
 <body class="light-grey content" style="max-width:1600px">
 
@@ -84,7 +85,7 @@
     </a>
   </div>
   <!-- First Photo Grid-->
-  <div class="row-padding">
+  <!-- <div class="row-padding">
     <a href="/detalItem.html">
     <div class="third container margin-bottom">
       <img  src="https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/450731/item/goods_09_450731.jpg?width=1600&impolicy=quality_75" alt="Norway" style="width:67%"  class="hover-opacity">
@@ -94,47 +95,10 @@
       </div>
     </div>
     </a>
-    <div class="third container margin-bottom">
-      <img src="https://tqq.com.vn/hm_content/uploads/sp-aolen-ao-thun-2019/ao-len/len03-ghi-550k-q71cs-ghi-533k/_KEM5675.jpg" alt="Norway" style="width:49%" class="hover-opacity">
-      <div class="container white">
-        <p><b>ÁO LEN CỔ TRÒN</b></p>
-        <p>Một chiếc áo len dệt kim 3D thoải mái với dạng đan chunky mang lại phong cách giản dị thoải mái, dễ dàng phối hợp với nhiều item khác nhau</p>
-      </div>
-    </div>
-    <div class="third container">
-      <img src="https://cf.shopee.vn/file/29338095932c50e1ba801bc86c68fb43" alt="Norway" style="width:67%" class="hover-opacity">
-      <div class="container white">
-        <p><b>ÁO LEN CỔ CHỮ V</b></p>
-        <p>Áo len gile nữ cổ chữ V thiết kế mới với phong cách Hàn Quốc, chất liệu dày dạn, màu nâu nhạt trẻ trung</p>
-      </div>
-    </div>
+  </div> -->
+  <div id="post-items-container"  class="row-padding">
   </div>
   
-  <!-- Second Photo Grid-->
-  <div class="row-padding">
-    <div class="third container margin-bottom">
-      <img src="https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/450565/item/goods_09_450565.jpg?width=1600&impolicy=quality_75e" alt="Norway" style="width:100%" class="hover-opacity">
-      <div class="container white">
-        <p><b>QUẦN LEGGING</b></p>
-        <p>Quần legging len dài, chất liệu co dãn , vải đan có gân đặc biệt và ấm áp. Kiểu dáng thời thượng, bên trong có lót lông cho ngày đông lạnh </p>
-      </div>
-    </div>
-    <div class="third container margin-bottom">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGzDPpdN0Ebmw6u0rHMERnUSy7MmCRQieolCZR-ULDxFaYm1-zZoAk4w2cd8tTlnrXL9w&usqp=CAU" alt="Norway" style="width:100%" class="hover-opacity">
-      <div class="container white">
-        <p><b>QUẦN LEN ỐNG RỘNG</b></p>
-        <p>Quần ống rộng chất liệu len tăm bo gấu mặc thu đông, dễ dàng phối đồ tạo phong cách thời trang đơn giản mà cá tính</p>
-      </div>
-    </div>
-    <div class="third container">
-      <img src="https://thieuhoa.com.vn/wp-content/uploads/2022/07/SRP8qKOxwYlM7tVDvSZTSc2YiZdmnBCzm1kWakmq.webp" alt="Norway" style="width:100%" class="hover-opacity">
-      <div class="container white">
-        <p><b>CHÂN VÁY LEN</b></p>
-        <p>Chất liệu len mỏng, ôm dáng, freesize, thiết kế với kiểu dáng Hàn Quốc, phù hợp với tất cả mọi người và mọi phong cách thời trang </p>
-      </div>
-    </div>
-  </div>
-
   <!-- Pagination -->
   <div class="center padding-32">
     <div class="bar">
@@ -208,6 +172,10 @@
 
 <!-- End page content -->
 </div>
+<script src="./post.js"></script>
+<script>
+  listsPosts('post-items-container');
+</script>
 
 <script>
 // Script to open and close sidebar
