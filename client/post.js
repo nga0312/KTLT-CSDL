@@ -78,7 +78,7 @@ function postElement(post){
 
     const div = document.createElement('div');
     div.className = "third container margin-bottom"
-    div.style.cssText = "height:400px";
+    div.style.cssText = "height:450px";
 
     const postImgElement = document.createElement('img');
     postImgElement.src = post.image;
