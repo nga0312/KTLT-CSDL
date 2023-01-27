@@ -1,15 +1,62 @@
 [{
     "id": 1,
-    "name": "abc",
-    "img": "",
+    "name": "ÁO LEN CAO CỔ",
+    "img": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/450731/item/goods_09_450731.jpg?width=1600&impolicy=quality_75",
     "price": 65,
-    "type": "Bag",
-    "intro": "hàng Việt Nam chất lượng cao"
+    "sell":0,
+    "size":"XL",
+    "brand":"Gucci",
+    "type": "Skirt",
+    "intro": "Áo len nam cổ lọ chất liệu len đan phối dày dạn dáng vừa phù hợp cho cả nam và nữ hoặc làm áo đôi"
 },{
     "id": 2,
-    "name": "bcd",
-    "img": "",
+    "name": "ÁO LEN CỔ TRÒN",
+    "img": "https://tqq.com.vn/hm_content/uploads/sp-aolen-ao-thun-2019/ao-len/len03-ghi-550k-q71cs-ghi-533k/_KEM5675.jpg",
     "price": 80,
+    "sell":0,
+    "size":"XL",
+    "brand":"Gucci",
     "type": "Skirt",
-    "intro": "hàng China chất lượng cao"
-}]
+    "intro": "Một chiếc áo len dệt kim 3D thoải mái với dạng đan chunky mang lại phong cách giản dị thoải mái, dễ dàng phối hợp với nhiều item khác nhau"
+},{"id": 3,
+    "name": "ÁO LEN CỔ CHỮ V",
+    "img": "https://cf.shopee.vn/file/29338095932c50e1ba801bc86c68fb43",
+    "price": 90,
+    "sell":0,
+    "size":"XL",
+    "brand":"Gucci",
+    "type": "Skirt",
+    "intro": "Áo len gile nữ cổ chữ V thiết kế mới với phong cách Hàn Quốc, chất liệu dày dạn, màu nâu nhạt trẻ trung"
+},{   
+    "id": 4,
+    "name": "QUẦN LEGGING",
+    "img": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/450565/item/goods_09_450565.jpg?width=1600&impolicy=quality_75e",
+    "price": 90,
+    "sell":0,
+    "size":"XL",
+    "brand":"Gucci",
+    "type": "Pant",
+    "intro": "Quần legging len dài, chất liệu co dãn , vải đan có gân đặc biệt và ấm áp. Kiểu dáng thời thượng, bên trong có lót lông cho ngày đông lạnh"
+
+},{
+    "id": 5,
+    "name": "QUẦN LEN ỐNG RỘNG",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGzDPpdN0Ebmw6u0rHMERnUSy7MmCRQieolCZR-ULDxFaYm1-zZoAk4w2cd8tTlnrXL9w&usqp=CAU",
+    "price": 90,
+    "sell":0,
+    "size":"XL",
+    "brand":"Gucci",
+    "type": "Pant",
+    "intro": "Quần ống rộng chất liệu len tăm bo gấu mặc thu đông, dễ dàng phối đồ tạo phong cách thời trang đơn giản mà cá tính"
+},{
+    "id": 6,
+    "name": "CHÂN VÁY LEN",
+    "img": "https://thieuhoa.com.vn/wp-content/uploads/2022/07/SRP8qKOxwYlM7tVDvSZTSc2YiZdmnBCzm1kWakmq.web",
+    "price": 90,
+    "sell":0,
+    "size":"XL",
+    "brand":"Gucci",
+    "type": "Pant",
+    "intro": "Chất liệu len mỏng, ôm dáng, freesize, thiết kế với kiểu dáng Hàn Quốc, phù hợp với tất cả mọi người và mọi phong cách thời trang"
+}
+]
