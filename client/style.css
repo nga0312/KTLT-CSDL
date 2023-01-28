@@ -1425,35 +1425,36 @@ nav .timkiem {
 .mem{
     padding: 8px;
 }
-ul#prodcton, ul#producton ul#producton {
+ul#production, ul#production ul#production {
     padding:0;
     margin: 0;
 }
-ul#producton li {
+ul#production li {
      list-style-type: none;    /* code này để bỏ các dấu chấm tròn*/
      float: left;    /* code này để menu dàn hàng ngang*/
 }
-ul#producton li a {
+ul#production li a {
 text-decoration: none;
 padding: 10px;
 color: black;
 background-color: white;
 
 }
-ul#producton li {
+ul#production li {
 position:static;
 } 
-ul#producton li ul#producton {
+ul#production li ul#production {
 display: none;
-position: absolute;
+position:absolute;
 width: 100px;
 
 }
-ul#producton li ul#producton li {
+ul#production li ul#production li {
 margin-top: 10px;
 margin-bottom: 5px;
+position: relative;
 }
-ul#producton li:hover ul#producton {
+ul#production li:hover ul#production {
 display: block;
 }
   
@@ -1831,4 +1832,5 @@ display: block;
 .border-pale-blue, .hover-border-pale-blue:hover {
     border-color: #e7ffff !important
 }
+
 
