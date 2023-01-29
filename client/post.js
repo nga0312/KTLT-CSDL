@@ -37,44 +37,16 @@ function listsPosts(postContainerElementId) {
     })
 }
 
-// function postElement(post){
-//     const anchorElement = document.createElement('a');
-//     // anchorElement.setAttribute('href', `${apiUrl}/items/${post.id}`);
-//     anchorElement.setAttribute('href', `${apiUrl}/detalItem.html`);
-//     anchorElement.setAttribute('target', '_black');
-//     anchorElement.innerText = post.productname;
-
-
-//     const postTitleElement = document.createElement('h5');
-//     postTitleElement.className = "container white"
-
-//     const postIntroElement = document.createElement('h6');
-//     postIntroElement.innerText = post.intro;
-
-//     const div = document.createElement('div');
-//     div.className = "third container margin-bottom"
-
-//     const postImgElement = document.createElement('img');
-//     postImgElement.src = post.image;
-//     postImgElement.className = "hover-opacity";
-//     postImgElement.style.cssText = "width:40%";
-
-//     postTitleElement.appendChild(div)
-//     postTitleElement.appendChild(postImgElement)
-//     postTitleElement.appendChild(anchorElement)
-//     postTitleElement.appendChild(postIntroElement)
- 
-
-//     return postTitleElement;
-
-// }
-
 function postElement(post){
+
+    console.log('post',post)
+    const searchParams = new URLSearchParams(post);
+    const queryString = searchParams.toString();
+    const query = 'detalItem.html?' + queryString;
+
     const anchorElement = document.createElement('a');
-    // anchorElement.setAttribute('href', `${apiUrl}/items/${post.id}`);
-    anchorElement.setAttribute('href', `${apiUrl}/detalItem.html`);
+    anchorElement.setAttribute('href', `${apiUrl}/${query}`);
     anchorElement.setAttribute('target', '_black');
-    // anchorElement.innerText = post.productname;
 
     const div = document.createElement('div');
     div.className = "third container margin-bottom"

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Modal</title>
+    <title>Edit product</title>
     <link rel="stylesheet" href="creatnewStyle.css" />
     <link
       rel="stylesheet"
@@ -23,7 +23,7 @@
       <form method="post" action='/api/items'>
       <div class="modal__inner">
         <div class="modal__header">
-          <p>Add new product</p>
+          <p>Edit the product</p>
           <a href="/">
           <i class="fas fa-times"></i>
           </a>
@@ -31,14 +31,15 @@
         <div class="modal__body">
         <div>
           <label for="name"><b>Tên của sản phẩm</b></label>
-          <input type="text" placeholder="Enter name of product" name="name" required style ="width: 420px;">
+          <input type="text" id="name" name="name" required style ="width: 420px;">
         </div>
         <div class="container">
           <label for="input-img" class="preview">
-            <i class="fas fa-cloud-upload-alt"></i>
+            <!-- <i class="fas fa-cloud-upload-alt"></i> -->
             <!-- <span>image</span> -->
           </label>
-          <input type="file" hidden id="input-img" name="image" />
+          <input type="file" hidden id="input-img" />
+          
         </div>
         <div>
           <label for="intro"><b>Giới thiệu</b></label>
@@ -59,7 +60,7 @@
               <option value="S">S</option>
               <option value="X">X</option>
               <option value="XXL">XXL</option>
-            </select>
+            name</select>
             <label for="brand"><b>Brand</b></label>
             <select id="brand" name="brand">
               <option value="LouisVuitton">Louis Vuitton</option>
@@ -74,10 +75,10 @@
          <label for="material"><b>Chất liệu của sản phẩm</b></label>
           <input type="text" placeholder="Enter material of product" name="material">
           <label for="price"><b>Giá của sản phẩm</b></label>
-          <input type="number" placeholder="Enter price of product" name="price" required>
+          <input type="number" id="price" name="price" required>
         </div>
         <div type="submit" class="modal__footer">
-          <button>Add</button>
+          <button>Save</button>
         </div>
       </div>
     </form>  
@@ -95,5 +96,23 @@
         console.log('img',img)
 })
     </script>
+        <!-- <script>
+            //read Query Strings
+            const url = window.location.href;
+            const searchParams = new URL(url).searchParams;
+            const entries = new URLSearchParams(searchParams).values();
+            const data = Array.from(entries);
+            console.log('data', data);
+    
+            // set default value
+            document.getElementById("name").value = data[1];
+            document.getElementById("subject").value = data[2];
+            document.getElementById("type").value = data[3];
+            document.getElementById("price").value = Number(data[4]);
+            document.getElementById("brand").value = data[6];
+            document.getElementById("size").value = data[7];
+            // document.getElementById("input-img").value = data[8];
+            
+        </script> -->
   </body>
 </html>
