@@ -7,9 +7,19 @@
 		<title>Product Card</title>
 		<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 		<link rel="stylesheet" href="detalItemStyle.css" />
+		<script>
+			//read Query Strings
+			const url = window.location.href;
+            const searchParams = new URL(url).searchParams;
+			
+            const values = new URLSearchParams(searchParams).values();
+            const data = Array.from(values);
+			console.log('url', values)
+            console.log('data', data);
+		</script>
 	</head>
 	<body>
-		<div class="card">
+		<div class="card" style="height: 700px;">
             <a href="/">0
 			<span class="like"><i class='bx bx-heart'></i></span>
             </a>
@@ -17,10 +27,15 @@
 			<span class="cart"><i class='bx bx-cart-alt' ></i></span>
             </a>
             <div class="card__img">
-				<img src="https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/450731/item/goods_09_450731.jpg?width=1600&impolicy=quality_75" alt="" />
+				<img id="card__img" alt="" />
 			</div>
 			<h2 class="card__title" id="card__title"></h2>
 			<p class="card__price" id="card__price"></p>
+			<div>
+				<p class="card__intro" id="card__intro"></p>
+			</div>
+			<p>&ensp;</p>
+			<p>&ensp;</p>
 			<div class="card__size">
 				<h3>Size:</h3>
 				<span id="size"></span>
@@ -35,20 +50,24 @@
 				<span class="black"></span>
 			</div>
 			<div class="card__action">
-                <a href="/">
+                <a href="/" id="edit">
                     <button >Sửa</button>
                 </a>
-                <a href="/">
-                    <button >Xóa</button>
+                <a id="delete" >
+                    <button id="btnDelete" onclick="delete(id)" >Xóa</button>
                 </a>
 			</div>
 		</div>
-
         <script>
-        	document.getElementById("materian").innerHTML = "Len";
-        	document.getElementById("size").innerHTML = "X";
-        	document.getElementById("card__price").innerHTML = "$99";
-        	document.getElementById("card__title").innerHTML = "Áo len cổ cao";
+			 // set default value
+        	document.getElementById("materian").innerHTML = data[9];
+        	document.getElementById("size").innerHTML = data[7];
+        	document.getElementById("card__price").innerHTML = "$" + data[4];
+			document.getElementById("card__intro").innerHTML = data[2];
+        	document.getElementById("card__title").innerHTML = data[1];
+			document.getElementById("card__img").src= data[8];
+			// set href for button Xóa
+			document.getElementById('delete').href = "/delete/" + data[0];
         </script>
 	</body>
 </html>
