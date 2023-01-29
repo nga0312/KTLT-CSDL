@@ -36,6 +36,28 @@ app.get('/items/:id', function(req, res){
 			});
 })
 
+app.get('/delete/:id', function(req, res){
+	var itemId = req.params.id;
+	db.connectDB()
+			.then((connection) => {
+				connection.query(
+					'DELETE FROM fashionshop.product Where id = ?', 
+					[itemId] ,
+					function (err, data, fields) {
+						console.log('data',data);
+						db.closeDB(connection);
+						return res.status(200).json({ result: `Đã xóa data` });
+					}
+				);
+			})
+			.catch((error) => {
+				console.log('Db not connected successfully', error);
+				return res
+					.status(200)
+					.json({ result: `Không thể kết nối Database` });
+			});
+})
+
 // routers
 app.use(apiPath + 'items', apiRouter);
 // app.use(apiPath + 'products', require('./routes/products.route'));

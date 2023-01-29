@@ -50,6 +50,13 @@ img {
 	text-align: center;
 }
 
+.card__intro{
+	color:aliceblue;
+	transition: 0.5s;
+	text-align: center;
+	margin-top: -50px;
+}
+
 .card__price {
 	font-weight: 600;
 	font-size: 26px;
@@ -65,6 +72,7 @@ img {
 	transform: translate(-112px, -72px);
 }
 
+.card__intro,
 .card__size,
 .card__color,
 .card__action {
@@ -81,6 +89,7 @@ img {
 	margin-top: -30px;
 }
 
+.card:hover .card__intro,
 .card:hover .card__size,
 .card:hover .card__color,
 .card:hover .card__action {

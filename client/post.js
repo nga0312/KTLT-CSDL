@@ -42,7 +42,7 @@ function postElement(post){
     console.log('post',post)
     const searchParams = new URLSearchParams(post);
     const queryString = searchParams.toString();
-    const query = 'edit.html?' + queryString;
+    const query = 'detalItem.html?' + queryString;
 
     const anchorElement = document.createElement('a');
     anchorElement.setAttribute('href', `${apiUrl}/${query}`);
