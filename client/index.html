@@ -27,7 +27,7 @@
   <div class="bar-block">
     <a href="#production" onclick="close()" class="bar-item button padding text-teal"><i class="fa fa-th-large fa-fw margin-right"></i>PRODUCTION</a>
     <a href="#contact" onclick="close()" class="bar-item button padding"><i class="fa fa-envelope fa-fw margin-right"></i>CONTACT</a>
-    <a href="/creatnew.html"onclick="close()" class="bar-item button padding"><i class="fa fa-envelope fa-fw margin-right"></i>Add</a>
+    <a href="/creatnew.html" onclick="close()" class="bar-item button padding"><i class="fa fa-cart-plus fa-fw margin-right"></i>ADD</a>
   </div>
   <div class="panel large">
     <i class="fa fa-facebook-official hover-opacity"></i>
@@ -60,8 +60,23 @@
       <button class="button black">ALL</button>
       <button class="button white"><i class="fa fa-caret-down margin-right"></i>TÊN SP</button>
       <button class="button white hide-small"><i class="fa fa-caret-down margin-right"></i>MÀU SẮC</button>
-      <button class="button white hide-small"><i class="fa fa-caret-down margin-right"></i>CHẤT LIỆU</button>
-      <button class="button white hide-small"><i class="fa fa-caret-down margin-right"></i>BRAND</button>
+        <button class="button white hide-small"><i class="fa fa-caret-down margin-right"></i>CHẤT LIỆU</button>
+      <span class="button white hide-small">
+        <ul id="production">
+          <i class="fa fa-caret-down margin-right"></i>
+          <li><a href="#">BRAND</a> 
+            <ul id="production">
+           <li>
+             <li><a href="#">Dior</a></li>
+             <li><a href="#">Chanel</a></li>
+             <li><a href="#">Louis Vuitton</a></li>
+             <li><a href="#">Hermès</a></li>
+             <li><a href="#">Prada</a></li>
+             <li><a href="#">Gucci</a></li>
+           </li>
+          </ul>  
+        </ul>
+     </span>
       <span class="button white hide-small">
         <ul id="production">
           <i class="fa fa-caret-down margin-right"></i>
@@ -75,8 +90,18 @@
             </ul>  
           </ul>
           </span>
-         <!-- /KÍCH THƯỚC X S XXL/  -->
-      <button class="button white hide-small"><i class="fa fa-caret-down margin-right"></i>BEST SELLER</button>
+
+      <span class="button white hide-small">
+        <ul id="production">
+          <i class="fa fa-caret-down margin-right"></i>
+        <li><a href="#">BEST SELLER</a> 
+            <ul id="production">
+                <li>
+                  <li><a href="#">TỪ 1/12 ĐẾN 1/1</a></li>
+                  </li>
+            </ul>  
+        </ul>
+      </span>
     </div>
     </div>
   </header>
@@ -123,7 +148,6 @@
         <p>512312311</p>
       </div>
     </div>
-
   <!-- Footer -->
   <footer class="container padding-32 dark-grey">
   <div class="row-padding">
