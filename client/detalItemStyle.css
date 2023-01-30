@@ -137,6 +137,24 @@ img {
 .card__color span.black {
 	background-color: black;
 }
+.card__color span.pink {
+	background-color: pink;
+}
+.card__color span.white {
+	background-color: white;
+}
+.card__color span.blue {
+	background-color: blue;
+}
+.card__color span.purple {
+	background-color: purple;
+}
+.card__color span.gray {
+	background-color: gray;
+}
+.card__color span.brown {
+	background-color: brown;
+}
 
 .card__action button {
 	padding: 10px 20px;

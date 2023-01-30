@@ -70,13 +70,14 @@ app.post('/edit/:id', function(req, res){
 	const brand = req.body.brand;
 	const material= req.body.material;
 	const image = req.body.image;
+	const color = req.body.color;
 
 	db.connectDB()
 		.then((connection) => {
 			console.log('connected successfully');
 			connection.query(
 				// missing img
-				`UPDATE fashionshop.product SET productname = '${name}', intro = '${intro}', typeproduct = '${type}', price = ${price}, brand = '${brand}', size ='${size}', material = '${material}' WHERE id = ?`
+				`UPDATE fashionshop.product SET productname = '${name}', intro = '${intro}', typeproduct = '${type}', price = ${price}, brand = '${brand}', size ='${size}', material = '${material}',color = '${color}' WHERE id = ?`
 				,[itemId] ,
 				function (err, data, fields) {
 					db.closeDB(connection);

@@ -17,8 +17,8 @@
 		</script>
 		<script>
 			//corver data from array to object
-			const [id, productname,intro,typeproduct, price, sell, brand,size, image, material] = data;
-			const objData = {id, productname,intro,typeproduct, price, sell, brand,size, image, material};
+			const [id, productname,intro,typeproduct, price, sell, brand,size, image, material, color] = data;
+			const objData = {id, productname,intro,typeproduct, price, sell, brand,size, image, material, color};
 			console.log('objdata', objData);
 
 			const params = new URLSearchParams(objData);
@@ -56,7 +56,7 @@
 			</div>
 			<div class="card__color">
 				<h3>Color:</h3>
-				<span class="black"></span>
+				<span id="color" class="white"></span>
 			</div>
 			<div class="card__action">
                 <a id="edit">
@@ -69,13 +69,15 @@
 		</div>
         <script>
 			 // set default value
+			document.getElementById("color").className= data[10];
+
         	document.getElementById("materian").innerHTML = data[9];
         	document.getElementById("size").innerHTML = data[7];
         	document.getElementById("card__price").innerHTML = "$" + data[4];
 			document.getElementById("card__intro").innerHTML = data[2];
         	document.getElementById("card__title").innerHTML = data[1];
 			document.getElementById("card__img").src= data[8];
-			// set href for button Xóa
+			// set href for button
 			document.getElementById('delete').href = "/delete/" + data[0];
 			document.getElementById('edit').href = query;
         </script>
