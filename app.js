@@ -58,6 +58,39 @@ app.get('/delete/:id', function(req, res){
 			});
 })
 
+app.post('/edit/:id', function(req, res){
+
+	var itemId = req.params.id
+
+	const name = req.body.name;
+	const intro = req.body.intro;
+	const type = req.body.type;
+	const price =req.body.price;
+	const size = req.body.size;
+	const brand = req.body.brand;
+	const material= req.body.material;
+	const image = req.body.image;
+
+	db.connectDB()
+		.then((connection) => {
+			console.log('connected successfully');
+			connection.query(
+				// missing img
+				`UPDATE fashionshop.product SET productname = '${name}', intro = '${intro}', typeproduct = '${type}', price = ${price}, brand = '${brand}', size ='${size}', material = '${material}' WHERE id = ?`
+				,[itemId] ,
+				function (err, data, fields) {
+					db.closeDB(connection);
+					return res.status(200).json({ result: `đã sửa item ${name}` });
+				}
+			);
+		})
+		.catch((error) => {
+			console.log('Db not connected successfully', error);
+			return res
+				.status(200)
+				.json({ result: `Không thể kết nối Database` });
+		});
+})
 // routers
 app.use(apiPath + 'items', apiRouter);
 // app.use(apiPath + 'products', require('./routes/products.route'));

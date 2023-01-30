@@ -14,8 +14,17 @@
 			
             const values = new URLSearchParams(searchParams).values();
             const data = Array.from(values);
-			console.log('url', values)
-            console.log('data', data);
+		</script>
+		<script>
+			//corver data from array to object
+			const [id, productname,intro,typeproduct, price, sell, brand,size, image, material] = data;
+			const objData = {id, productname,intro,typeproduct, price, sell, brand,size, image, material};
+			console.log('objdata', objData);
+
+			const params = new URLSearchParams(objData);
+    		const queryString = params.toString();
+    		const query = '/edit.html?' + queryString;
+
 		</script>
 	</head>
 	<body>
@@ -50,7 +59,7 @@
 				<span class="black"></span>
 			</div>
 			<div class="card__action">
-                <a href="/" id="edit">
+                <a id="edit">
                     <button >Sửa</button>
                 </a>
                 <a id="delete" >
@@ -68,6 +77,7 @@
 			document.getElementById("card__img").src= data[8];
 			// set href for button Xóa
 			document.getElementById('delete').href = "/delete/" + data[0];
+			document.getElementById('edit').href = query;
         </script>
 	</body>
 </html>

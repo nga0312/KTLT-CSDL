@@ -20,7 +20,7 @@
     </style>
   </head>
   <body>
-      <form method="post" action='/api/items'>
+      <form name="editForm" method="post">
       <div class="modal__inner">
         <div class="modal__header">
           <p>Edit the product</p>
@@ -60,7 +60,7 @@
               <option value="S">S</option>
               <option value="X">X</option>
               <option value="XXL">XXL</option>
-            name</select>
+            </select>
             <label for="brand"><b>Brand</b></label>
             <select id="brand" name="brand">
               <option value="LouisVuitton">Louis Vuitton</option>
@@ -73,7 +73,7 @@
         </div>
         <div class="col-26">
          <label for="material"><b>Chất liệu của sản phẩm</b></label>
-          <input type="text" placeholder="Enter material of product" name="material">
+          <input type="text" id="material" placeholder="Enter material of product" name="material">
           <label for="price"><b>Giá của sản phẩm</b></label>
           <input type="number" id="price" name="price" required>
         </div>
@@ -96,7 +96,7 @@
         console.log('img',img)
 })
     </script>
-        <!-- <script>
+        <script>
             //read Query Strings
             const url = window.location.href;
             const searchParams = new URL(url).searchParams;
@@ -111,8 +111,19 @@
             document.getElementById("price").value = Number(data[4]);
             document.getElementById("brand").value = data[6];
             document.getElementById("size").value = data[7];
-            // document.getElementById("input-img").value = data[8];
-            
-        </script> -->
+            // document.getElementById("input-img").scr = data[8];
+            document.getElementById("material").value = data[9];
+        </script>
+        <script>
+          // set action for form 
+          window.onload = function() {
+            document.editForm.action = get_action();
+            }
+
+          function get_action() {
+            return '/edit/' +data[0];
+          }
+          document.getElementById('editForm').action = "/edit/" +data[0];
+        </script>
   </body>
 </html>
