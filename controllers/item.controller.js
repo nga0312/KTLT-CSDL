@@ -33,6 +33,7 @@ class itemController {
 		const brand = req.body.brand;
 		const material= req.body.material;
 		const image = req.body.image;
+		const color = req.body.color;
 		
 
 		// console.log('username', username);
@@ -42,7 +43,7 @@ class itemController {
 			.then((connection) => {
 				console.log('connected successfully');
 				connection.query(
-					`INSERT INTO fashionshop.product(productname,intro,typeproduct, price, sell, brand,size, material, image) VALUES('${name}','${intro}', '${type}', '${price}',0, '${brand}', '${size}','${material}','${image}')`,
+					`INSERT INTO fashionshop.product(productname,intro,typeproduct, price, sell, brand,size, material, image, color) VALUES('${name}','${intro}', '${type}', '${price}',0, '${brand}', '${size}','${material}','${image}','${color}')`,
 					// type, price, sell=0, brand= rong, size, image=''
 					function (err, data, fields) {
 					
