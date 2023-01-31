@@ -7,11 +7,27 @@ const apiPath = '/api/';
 const apiRouter = require('./routes/items.route')
 const db = require('./database');
 
+const multer = require('multer');
+const path = require('path')
+
 app.use(express.json());
 app.use(express.urlencoded());
 
 // website
 app.use(express.static('client'));
+
+//upload img
+const storage = multer.diskStorage({
+	destination: './client/img/',
+	filename:(req, file, cb) =>{
+		cb(null, file.originalname)
+	}
+})
+
+const upload = multer({
+	storage: storage
+});
+
 
 //get data by id
 app.get('/items/:id', function(req, res){
@@ -58,7 +74,7 @@ app.get('/delete/:id', function(req, res){
 			});
 })
 
-app.post('/edit/:id', function(req, res){
+app.post('/edit/:id',upload.single("image") ,function(req, res){
 
 	var itemId = req.params.id
 
@@ -69,7 +85,7 @@ app.post('/edit/:id', function(req, res){
 	const size = req.body.size;
 	const brand = req.body.brand;
 	const material= req.body.material;
-	const image = req.body.image;
+	const image = req.file.filename;
 	const color = req.body.color;
 
 	db.connectDB()
@@ -77,7 +93,7 @@ app.post('/edit/:id', function(req, res){
 			console.log('connected successfully');
 			connection.query(
 				// missing img
-				`UPDATE fashionshop.product SET productname = '${name}', intro = '${intro}', typeproduct = '${type}', price = ${price}, brand = '${brand}', size ='${size}', material = '${material}',color = '${color}' WHERE id = ?`
+				`UPDATE fashionshop.product SET productname = '${name}', intro = '${intro}', typeproduct = '${type}', price = ${price}, brand = '${brand}', size ='${size}', material = '${material}',color = '${color}',image = '${image}' WHERE id = ?`
 				,[itemId] ,
 				function (err, data, fields) {
 					db.closeDB(connection);

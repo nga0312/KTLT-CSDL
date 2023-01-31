@@ -20,7 +20,7 @@
     </style>
   </head>
   <body>
-      <form name="editForm" method="post">
+      <form name="editForm" method="post" enctype="multipart/form-data">
       <div class="modal__inner">
         <div class="modal__header">
           <p>Edit the product</p>
@@ -35,11 +35,10 @@
         </div>
         <div class="container">
           <label for="input-img" class="preview">
-            <!-- <i class="fas fa-cloud-upload-alt"></i> -->
+            <i class="fas fa-cloud-upload-alt"></i>
             <!-- <span>image</span> -->
           </label>
-          <input type="file" hidden id="input-img" />
-          
+          <input type="file" hidden id="input-img" name="image" />
         </div>
         <div>
           <label for="intro"><b>Giới thiệu</b></label>
