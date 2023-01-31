@@ -76,7 +76,7 @@
         	document.getElementById("card__price").innerHTML = "$" + data[4];
 			document.getElementById("card__intro").innerHTML = data[2];
         	document.getElementById("card__title").innerHTML = data[1];
-			document.getElementById("card__img").src= data[8];
+			document.getElementById("card__img").src= "./img/" + data[8];
 			// set href for button
 			document.getElementById('delete').href = "/delete/" + data[0];
 			document.getElementById('edit').href = query;

@@ -53,7 +53,7 @@ function postElement(post){
     div.style.cssText = "height:450px";
 
     const postImgElement = document.createElement('img');
-    postImgElement.src = post.image;
+    postImgElement.src = "./img/" + post.image;
     postImgElement.className = "hover-opacity";
     postImgElement.style.cssText = "width:60%";
 
