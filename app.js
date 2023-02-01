@@ -28,6 +28,17 @@ const upload = multer({
 	storage: storage
 });
 
+// const storage = multer.diskStorage({
+// 	destination: './client/img',
+// 	filename:(req, file, cb) =>{
+// 		cb(null, file.originalname)
+// 	}
+// })
+
+// const upload = multer({
+// 	storage: storage
+// });
+
 
 //get data by id
 app.get('/items/:id', function(req, res){
@@ -52,6 +63,7 @@ app.get('/items/:id', function(req, res){
 			});
 })
 
+//delete data by id
 app.get('/delete/:id', function(req, res){
 	var itemId = req.params.id;
 	db.connectDB()
@@ -74,9 +86,15 @@ app.get('/delete/:id', function(req, res){
 			});
 })
 
-app.post('/edit/:id',upload.single("image") ,function(req, res){
+app.post('/edit/:id', upload.single("image") ,function(req, res){
 
 	var itemId = req.params.id
+
+	const file = req.file;
+	let image = req.body.image;
+	if(file){
+		image = req.file.filename;
+	}
 
 	const name = req.body.name;
 	const intro = req.body.intro;
@@ -85,8 +103,9 @@ app.post('/edit/:id',upload.single("image") ,function(req, res){
 	const size = req.body.size;
 	const brand = req.body.brand;
 	const material= req.body.material;
-	const image = req.file.filename;
+	// const image = req.file.filename;
 	const color = req.body.color;
+
 
 	db.connectDB()
 		.then((connection) => {
@@ -97,7 +116,7 @@ app.post('/edit/:id',upload.single("image") ,function(req, res){
 				,[itemId] ,
 				function (err, data, fields) {
 					db.closeDB(connection);
-					return res.status(200).json({ result: `đã sửa item ${name}` });
+					return res.status(200).json({ result: `đã sửa item ${image}` });
 				}
 			);
 		})
