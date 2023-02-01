@@ -86,15 +86,46 @@ app.get('/delete/:id', function(req, res){
 			});
 })
 
+app.post('/buy/:id', function(req, res){
+
+	var itemId = req.params.id
+
+	const sellOld = req.body.sell;
+	const sell = Number(sellOld) + 1 ;
+
+	db.connectDB()
+		.then((connection) => {
+			console.log('connected successfully');
+			connection.query(
+				// missing img
+				`UPDATE fashionshop.product SET sell = '${sell}' WHERE id = ?`
+				,[itemId] ,
+				function (err, data, fields) {
+					db.closeDB(connection);
+					return res.status(200).json({ result: `đã bán ${sell} sản phẩm` });
+				}
+			);
+		})
+		.catch((error) => {
+			console.log('Db not connected successfully', error);
+			return res
+				.status(200)
+				.json({ result: `Không thể kết nối Database` });
+		});
+})
+
 app.post('/edit/:id', upload.single("image") ,function(req, res){
 
 	var itemId = req.params.id
 
 	const file = req.file;
-	let image = req.body.image;
+	let image = req.body.oldImg;
 	if(file){
 		image = req.file.filename;
 	}
+	// else{
+	// 	image = req.body.oldImg;
+	// }
 
 	const name = req.body.name;
 	const intro = req.body.intro;
