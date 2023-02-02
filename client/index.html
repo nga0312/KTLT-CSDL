@@ -60,7 +60,7 @@
     </div>
     <div class="section bottombar padding-16">
       <span class="margin-right">Filter:</span> 
-      <button class="button black">ALL</button>
+      <button class="btn button black" data-filter="ALL">ALL</button>
       <button class="button white"><i class="fa fa-caret-down margin-right"></i>TÊN SP</button>
       <button class="button white hide-small"><i class="fa fa-caret-down margin-right"></i>MÀU SẮC</button>
         <button class="button white hide-small"><i class="fa fa-caret-down margin-right"></i>CHẤT LIỆU</button>
@@ -70,12 +70,12 @@
           <li><a href="#">BRAND</a>
           <ul style="width: 60px;" id="production">
            <li>
-             <li><a href="#">Dior</a></li>
-             <li><a href="#">Chanel</a></li>
-             <li><a href="#">Louis Vuitton</a></li>
-             <li><a href="#">Hermès</a></li>
-             <li><a href="#">Prada</a></li>
-             <li><a href="#">Gucci</a></li>
+             <li><a href="#" class="btn" data-filter="Dior">Dior</a></li>
+             <li><a href="#" class="btn" data-filter="Chanel">Chanel</a></li>
+             <li><a href="#" class="btn" data-filter="LouisVuitton">Louis Vuitton</a></li>
+             <li><a href="#" class="btn" data-filter="Hermès">Hermès</a></li>
+             <li><a href="#" class="btn" data-filter="Prada">Prada</a></li>
+             <li><a href="#" class="btn" data-filter="Gucci">Gucci</a></li>
            </li>
           </ul> 
           </li> 
@@ -87,9 +87,9 @@
         <li><a href="#">KÍCH THƯỚC</a> 
             <ul id="production">
                 <li>
-                  <li><a href="#">CỠ X</a></li>
-                  <li><a href="#">CỠ S</a></li>
-                  <li><a href="#">CỠ XXL</a></li>
+                  <li><a href="#" class="btn" data-filter="X">CỠ X</a></li>
+                  <li><a href="#" class="btn" data-filter="S">CỠ S</a></li>
+                  <li><a href="#" class="btn" data-filter="XXL">CỠ XXL</a></li>
                 </li>
             </ul>  
           </ul>
@@ -111,16 +111,19 @@
   </header>
   <!-- First Photo Grid-->
   <!-- <div class="row-padding">
+    <div style="display: none; visibility: visible;">
     <a href="/detalItem.html">
     <div class="third container margin-bottom">
-      <img  src="./img/11111.jpg" alt="Norway" style="width:67%"  class="hover-opacity">
+      <img  src="./img/29338095932c50e1ba801bc86c68fb43.jpg" alt="Norway" style="width:67%"  class="hover-opacity">
       <div class="container white">
         <p><b>ÁO LEN CAO CỔ</b></p>
         <p>Áo len nam cổ lọ chất liệu len đan phối dày dạn dáng vừa phù hợp cho cả nam và nữ hoặc làm áo đôi</p>
       </div>
     </div>
     </a>
+    </div>
   </div> -->
+
   <div id="post-items-container"  class="row-padding">
   </div>
   
@@ -141,15 +144,15 @@
     <div class="row-padding center padding-24" style="margin:0 -16px">
       <div class="third dark-grey">
         <p><i class="fa fa-envelope xxlarge text-light-grey"></i></p>
-        <p>email@email.com</p>
+        <p>email@sis.hust.edu.vn </p>
       </div>
       <div class="third teal">
         <p><i class="fa fa-map-marker xxlarge text-light-grey"></i></p>
-        <p>Chicago, US</p>
+        <p>Số 1 Đại Cồ Việt, Hai Bà Trưng</p>
       </div>
       <div class="third dark-grey">
         <p><i class="fa fa-phone xxlarge text-light-grey"></i></p>
-        <p>512312311</p>
+        <p>024 3869 4242</p>
       </div>
     </div>
   <!-- Footer -->
@@ -180,7 +183,8 @@
 </div>
 <script src="./post.js"></script>
 <script>
-  listsPosts('post-items-container');
+  // listsPosts('post-items-container');
+  filterItems('post-items-container')
 </script>
 
 <script>
