@@ -38,6 +38,7 @@
             <i class="fas fa-cloud-upload-alt"></i>
             <!-- <span>image</span> -->
           </label>
+          <input type="hidden" id="oldImg" name="oldImg">
           <input type="file" hidden id="input-img" name="image" />
         </div>
         <div>
@@ -122,9 +123,11 @@
             document.getElementById("price").value = Number(data[4]);
             document.getElementById("brand").value = data[6];
             document.getElementById("size").value = data[7];
-            // document.getElementById("input-img").scr = data[8];
+            document.getElementById("oldImg").value = data[8];
             document.getElementById("material").value = data[9];
             document.getElementById("color").value = data[10];
+
+            console.log('img', document.getElementById("oldImg").value)
         </script>
         <script>
           // set action for form 

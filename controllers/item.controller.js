@@ -8,7 +8,7 @@ class itemController {
 			.then((connection) => {
 
 				connection.query(
-					'SELECT * FROM fashionshop.product',
+					'SELECT * FROM fashionshop.product ORDER BY sell DESC',
 					function (err, data, fields) {
 						console.log('data',data);
 						db.closeDB(connection);
