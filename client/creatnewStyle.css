@@ -11,16 +11,17 @@
 }
 
 body {
-  background-image: linear-gradient(
-    45deg,
-    rgb(164, 165, 169) 0%,
-    rgb(155, 139, 154) 50%,
-    rgb(75, 74, 72) 100%
-  );
+  background-color: #4b4a4a;
   height: 1000vh;
   overflow: hidden;
+  overflow-x: hidden;
 }
-
+html {
+  float: left;
+height: 800px;
+width: 1535px;
+   overflow-y: scroll;
+}
 /* .open-modal-btn {
   position: fixed;
   top: 50%;
@@ -204,14 +205,20 @@ text-align: center;
 } */
 
 .container {
-  width: 700px;
+  width: 800px;
   margin: 20px 20px 20px 100px;
 }
 
 .preview {
   border: 2px dashed #fff;
   width: 50%;
-  height: 200px;
+  height: 340px;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+top: 0;
+left: 0;
+z-index: 1;
   color: black;
   font-size: 22px;
   position: relative;
@@ -229,8 +236,8 @@ text-align: center;
   margin-bottom: 20px;
 }
 img {
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   position: absolute;
@@ -238,5 +245,3 @@ img {
   left: 0;
   z-index: 1;
 }
-
-
