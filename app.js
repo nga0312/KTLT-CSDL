@@ -28,18 +28,7 @@ const upload = multer({
 	storage: storage
 });
 
-// const storage = multer.diskStorage({
-// 	destination: './client/img',
-// 	filename:(req, file, cb) =>{
-// 		cb(null, file.originalname)
-// 	}
-// })
-
-// const upload = multer({
-// 	storage: storage
-// });
-
-
+//Hạnh
 //get data by id
 app.get('/items/:id', function(req, res){
 	var itemId = req.params.id;
@@ -63,6 +52,7 @@ app.get('/items/:id', function(req, res){
 			});
 })
 
+//Hạnh
 //delete data by id
 app.get('/delete/:id', function(req, res){
 	var itemId = req.params.id;
@@ -86,6 +76,8 @@ app.get('/delete/:id', function(req, res){
 			});
 })
 
+//Hạnh
+// sell +1 when buy item
 app.post('/buy/:id', function(req, res){
 
 	var itemId = req.params.id
@@ -114,6 +106,8 @@ app.post('/buy/:id', function(req, res){
 		});
 })
 
+//Hạnh
+//edit data by id
 app.post('/edit/:id', upload.single("image") ,function(req, res){
 
 	var itemId = req.params.id
@@ -158,6 +152,8 @@ app.post('/edit/:id', upload.single("image") ,function(req, res){
 				.json({ result: `Không thể kết nối Database` });
 		});
 })
+
+//Hưng
 // routers
 app.use(apiPath + 'items', apiRouter);
 // app.use(apiPath + 'products', require('./routes/products.route'));

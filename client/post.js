@@ -1,6 +1,7 @@
 
 const apiUrl = 'http://localhost:5500'
 
+//Hưng + Hạnh
 // hàm gọi data từ http://localhost:5500/api/items
 async function fetchPosts(){
     try{
@@ -16,6 +17,7 @@ async function fetchPosts(){
 }
 }
 
+//Hạnh
 // hàm tìm kiếm vị trí display các sản phẩm
 function listsPosts(postContainerElementId) {
     const postContainerElement = document.getElementById(postContainerElementId);
@@ -38,7 +40,8 @@ function listsPosts(postContainerElementId) {
     })
 }
 
-// hàm display sản phẩm và kiểm tra thuộc tính cần tìm kiếm
+//Nga + Hạnh
+// hàm display sản phẩm
 function postElement(post){
 
     console.log('post',post)
@@ -110,7 +113,7 @@ function postElement(post){
     return div1;
 }
 
-
+//Nga
 function filterItem(value){
     console.log('value',value)
 
@@ -143,7 +146,7 @@ function filterItem(value){
 
 
 
-
+//Hạnh
 // search input 
 document.getElementById('search').addEventListener('click', ()=>{
     let searchInput = document.getElementById('search-input').value;
@@ -160,6 +163,7 @@ document.getElementById('search').addEventListener('click', ()=>{
     })
 })
 
+//Nga
 //sau khi load xong trang mới chạy hiện thị listsPosts
 window.onload = () =>{
     filterItem('All')
