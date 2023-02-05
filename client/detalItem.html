@@ -25,7 +25,7 @@
     		const queryString = params.toString();
     		const query = '/edit.html?' + queryString;
 
-			const sellItem = '/' ;
+			// const sellItem = '/' ;
 
 		</script>
 	</head>
@@ -76,29 +76,30 @@
 		</div>
         <script>
 			 // set default value
-			document.getElementById("color").className= data[10];
-			document.getElementById("sellText").innerHTML= data[5];
-			document.getElementById("sell").value = data[5];
-        	document.getElementById("materian").innerHTML = data[9];
-        	document.getElementById("size").innerHTML = data[7];
-        	document.getElementById("card__price").innerHTML = "$" + data[4];
-			document.getElementById("card__intro").innerHTML = data[2];
-        	document.getElementById("card__title").innerHTML = data[1];
-			document.getElementById("card__img").src= "./img/" + data[8];
+			 //objData
+			document.getElementById("color").className= objData.color;
+			document.getElementById("sellText").innerHTML= objData.sell;
+			document.getElementById("sell").value = objData.sell;
+        	document.getElementById("materian").innerHTML = objData.material;
+        	document.getElementById("size").innerHTML = objData.size;
+        	document.getElementById("card__price").innerHTML = "$" + objData.price;
+			document.getElementById("card__intro").innerHTML = objData.intro;
+        	document.getElementById("card__title").innerHTML = objData.productname;
+			document.getElementById("card__img").src= "./img/" + objData.image;
 
 			// set href for button
-			document.getElementById('delete').href = "/delete/" + data[0];
+			document.getElementById('delete').href = "/delete/" + objData.id;
 			document.getElementById('edit').href = query;
 
 			  // set action for buy form 
 			window.onload = function() {
-            document.buyItem.action = '/buy/' +data[0];
+            document.buyItem.action = '/buy/' + objData.id;
             }
 
           	// function get_action() {
             // 	return '/buy/' +data[0];
           	// }
-          	document.getElementById('buyItem').action = "/buy/" +data[0];
+          	document.getElementById('buyItem').action = "/buy/" + objData.id;
         </script>
         </script>
 	</body>

@@ -1,10 +1,14 @@
 # KTLT-CSDL
 
 Chạy hệ thống: Cài đặt nodeJS
-  Chạy lệnh: + npm install
-             + node app
+  Chạy lệnh: 
+  + npm install
+  + node app
 
-Hệ CSDL: mySQL
+Hệ CSDL: 
+  + mySQL
+  + tạo database: fashionshop
+  + tạo table: product với các thuộc tính (id, productname, intro, typeproduct, price, sell, brand,size, material, image, color)
 
 Thư viện:
   + mysql: 2.18.1

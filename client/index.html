@@ -53,31 +53,47 @@
     <div class="add">
       <button class="button black"><a href="/creatnew.html" style="text-decoration: none">ADD</a></button></div>
     <div class = "timkiem">
-    <form>
-      <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
-      <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-    </form>
+    <div class="wrapper search-container">
+      <input type="search" name="search-input" id="search-input" placeholder="Tìm kiếm sản phẩm..." />
+      <button type="submit" id="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </div>
     </div>
     <div class="section bottombar padding-16">
       <span class="margin-right">Filter:</span> 
-      <button class="button black">ALL</button>
-      <button class="button white hide-small"><i class="fa fa-caret-down margin-right"></i>CHẤt LIỆU</button>
-        <button class="button white hide-small"><i class="fa fa-caret-down margin-right"></i>MÀU SẮC</button>
+      <button class="button black btnFilter" onclick=" filterItem('All')">ALL</button>
+      <!-- <button class="button white hide-small"><i class="fa fa-caret-down margin-right"></i>LOẠI</button> -->
+        <!-- <button class="button white hide-small"><i class="fa fa-caret-down margin-right"></i>MÀU SẮC</button> -->
         <span class="button white hide-small">
           <ul id="production">
             <i class="fa fa-caret-down margin-right"></i>
-            <li><a href="#">BRAND</a>
+            <li><a href="#">LOẠI</a>
             <ul style="width: 60px;" id="production">
              <li>
-               <li><a href="#">Green</a></li>
-               <li><a href="#">Red</a></li>
-               <li><a href="#">Black</a></li>
-               <li><a href="#">Pink</a></li>
-               <li><a href="#">White</a></li>
-               <li><a href="#">Blue</a></li>
-               <li><a href="#">Purple</a></li>
-               <li><a href="#">Gray</a></li>
-               <li><a href="#">Brown</a></li>
+              <!-- "post-items-container" -->
+               <li><button class="button white hide-small btnFilter" onclick="filterItem('Skirt')">Áo</button></li>
+               <li><button class="button white hide-small btnFilter" onclick="filterItem('Pant')">Quần</button></li>
+               <li><button class="button white hide-small btnFilter" onclick="filterItem('Bag')">Túi Xách</button></li>
+             </li>
+            </ul> 
+            </li> 
+          </ul>
+        </span>
+        <span class="button white hide-small">
+          <ul id="production">
+            <i class="fa fa-caret-down margin-right"></i>
+            <li><a href="#">MÀU SẮC</a>
+            <ul style="width: 60px;" id="production">
+             <li>
+              <!-- "post-items-container" -->
+               <li><button class="button white hide-small btnFilter" onclick="filterItem('green')">Green</button></li>
+               <li><button class="button white hide-small btnFilter" onclick="filterItem('red')">Red</button></li>
+               <li><button class="button white hide-small btnFilter" onclick="filterItem('black')">Black</button></li>
+               <li><button class="button white hide-small btnFilter" onclick="filterItem('pink')"><a href="#">Pink</a></button></li>
+               <li><button class="button white hide-small btnFilter" onclick="filterItem('white')"><a href="#">White</a></button></li>
+               <li><button class="button white hide-small btnFilter" onclick="filterItem('blue')"><a href="#">Blue</a></button></li>
+               <li><button class="button white hide-small btnFilter" onclick="filterItem('purple')"><a href="#">Purple</a></button></li>
+               <li><button class="button white hide-small btnFilter" onclick="filterItem('gray')"><a href="#">Gray</a></button></li>
+               <li><button class="button white hide-small btnFilter" onclick="filterItem('Brow')"><a href="#">Brow</a></button></li>
              </li>
             </ul> 
             </li> 
@@ -89,12 +105,12 @@
           <li><a href="#">BRAND</a>
           <ul style="width: 60px;" id="production">
            <li>
-             <li><a href="#">Dior</a></li>
-             <li><a href="#">Chanel</a></li>
-             <li><a href="#">Louis Vuitton</a></li>
-             <li><a href="#">Hermès</a></li>
-             <li><a href="#">Prada</a></li>
-             <li><a href="#">Gucci</a></li>
+             <li><button class="button white hide-small btnFilter" onclick="filterItem('Dior')">Dior</button></li>
+             <li><button class="button white hide-small btnFilter" onclick="filterItem('Chanel')">Chanel</button></li>
+             <li><button class="button white hide-small btnFilter" onclick="filterItem('LouisVuitton')">Louis Vuitton</button></li>
+             <li><button class="button white hide-small btnFilter" onclick="filterItem('Hermès')">Hermès</button></li>
+             <li><button class="button white hide-small btnFilter" onclick="filterItem('Prada')">Prada</button></li>
+             <li><button class="button white hide-small btnFilter" onclick="filterItem('Gucci')">Gucci</button></li>
            </li>
           </ul> 
           </li> 
@@ -106,9 +122,9 @@
         <li><a href="#">KÍCH THƯỚC</a> 
             <ul id="production">
                 <li>
-                  <li><a href="#">CỠ X</a></li>
-                  <li><a href="#">CỠ S</a></li>
-                  <li><a href="#">CỠ XXL</a></li>
+                  <li><button class="button white hide-small btnFilter" onclick="listsPosts('post-items-container','X')"><a href="#">CỠ X</a></button></li>
+                  <li><button class="button white hide-small btnFilter" onclick="listsPosts('post-items-container','S')"><a href="#">CỠ S</a></button></li>
+                  <li><button class="button white hide-small btnFilter" onclick="listsPosts('post-items-container','XXL')"><a href="#">CỠ XXL</a></button></li>
                 </li>
             </ul>  
           </ul>
@@ -132,10 +148,11 @@
   <!-- <div class="row-padding">
     <a href="/detalItem.html">
     <div class="third container margin-bottom">
-      <img  src="./img/11111.jpg" alt="Norway" style="width:67%"  class="hover-opacity">
+      <img  src="./img/29338095932c50e1ba801bc86c68fb43.jpg" alt="Norway" style="width:67%"  class="hover-opacity">
       <div class="container white">
         <p><b>ÁO LEN CAO CỔ</b></p>
         <p>Áo len nam cổ lọ chất liệu len đan phối dày dạn dáng vừa phù hợp cho cả nam và nữ hoặc làm áo đôi</p>
+        <input type="hidden" id="typeproduct" name="typeproduct">
       </div>
     </div>
     </a>

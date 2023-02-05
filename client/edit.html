@@ -114,18 +114,23 @@
             const searchParams = new URL(url).searchParams;
             const entries = new URLSearchParams(searchParams).values();
             const data = Array.from(entries);
-            console.log('data', data);
+            // console.log('data', data);
+
+            //corver data from array to object
+			      const [id, productname,intro,typeproduct, price, sell, brand,size, image, material, color] = data;
+			      const objData = {id, productname,intro,typeproduct, price, sell, brand,size, image, material, color};
+			      console.log('objdata', objData);
     
             // set default value
-            document.getElementById("name").value = data[1];
-            document.getElementById("subject").value = data[2];
-            document.getElementById("type").value = data[3];
-            document.getElementById("price").value = Number(data[4]);
-            document.getElementById("brand").value = data[6];
-            document.getElementById("size").value = data[7];
-            document.getElementById("oldImg").value = data[8];
-            document.getElementById("material").value = data[9];
-            document.getElementById("color").value = data[10];
+            document.getElementById("name").value = objData.productname;
+            document.getElementById("subject").value = objData.intro;
+            document.getElementById("type").value = objData.typeproduct;
+            document.getElementById("price").value = Number(objData.price);
+            document.getElementById("brand").value = objData.brand;
+            document.getElementById("size").value = objData.size;
+            document.getElementById("oldImg").value = objData.image;
+            document.getElementById("material").value = objData.material;
+            document.getElementById("color").value = objData.color;
 
             console.log('img', document.getElementById("oldImg").value)
         </script>

@@ -1837,4 +1837,20 @@ display: block;
     border-color: #e7ffff !important
 }
 
+.wrapper{
+    width:95%;
+    margin: 0 auto;
+}
+
+.search-container{
+    margin: 1em 0;
+}
+
+.search-container input{
+    background-color: transparent;
+    width: 50%;
+    border-bottom: 2px solid #110f29;
+    padding: 1em 0.3em;
+}
+
 
